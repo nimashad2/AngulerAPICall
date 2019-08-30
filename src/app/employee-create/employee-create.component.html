@@ -1,0 +1,29 @@
+<form #form="ngForm" autocomplete="off">
+  <div class="container custom-container">
+    <div class="col-md-12">
+      <h3 class="mb-3 text-center">Create Employee</h3>
+
+      <div class="form-group">
+        <input type="text" name="FullName" #FullName="ngModel" [(ngModel)]="employeeDetails.FullName" class="form-control" placeholder="FullName" required>
+        <div class="validation-error" *ngIf="FullName.invalid && FullName.touched">This field is required.</div>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="EMPCode" [(ngModel)]="employeeDetails.EMPCode" class="form-control" placeholder="EMPCode">
+      </div>
+
+      <div class="form-group">
+        <input type="number" name="Mobile" [(ngModel)]="employeeDetails.Mobile" class="form-control" placeholder="Mobile">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="Position" [(ngModel)]="employeeDetails.Position" class="form-control" placeholder="Position">
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" [disabled]="form.invalid" (click)="addEmployee()">Create Employee</button>
+      </div>
+
+    </div>
+  </div>
+</form>
